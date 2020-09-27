@@ -17,6 +17,8 @@ import { LoginComponent } from './user/login/login.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NewtaskComponent } from './tasks/newtask/newtask.component';
 import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
+import { OptionsComponent } from './shared/options/options.component';
+import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.component';
 
 
 
@@ -28,7 +30,9 @@ import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
     LoginComponent,
     ProfileComponent,
     NewtaskComponent,
-    ViewtasksComponent
+    ViewtasksComponent,
+    OptionsComponent,
+    ViewalltasksComponent
   ],
   imports: [
     BrowserModule,
