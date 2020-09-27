@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-
+import { TasksService } from './../../services/tasks.service';
 
 @Component({
   selector: 'app-viewtasks',
@@ -9,10 +9,13 @@ import * as moment from 'moment';
 })
 export class ViewtasksComponent implements OnInit {
 date: any;
-  constructor() { }
+
+
+  constructor(private as: TasksService) { }
 
   ngOnInit(): void {
- this.date=moment().format('LL');  
+ this.date=moment().format('LL');
+  
 }
 
 }

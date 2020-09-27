@@ -1,1 +1,127 @@
-<p>newtask works!</p>
+<br>
+<div class="container">
+
+
+<br>
+<h1>Add a New Task!</h1>
+
+
+<div class="form-group">
+ <label>Job Creation Date</label>
+   <div class="input-group">
+ <input #_jdate="ngModel" required [class.is-invalid]="_jdate.invalid && _jdate.touched" placeholder="yyyy-mm-dd"
+           name="a"  [(ngModel)]="jdate" ngbDatepicker #a="ngbDatepicker" [minDate]="{year: 2020, month: 1, day: 1}"
+                [maxDate]="{year: 2020, month: 12, day: 31}">
+
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="a.toggle()" type="button"></button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+ <div class="form-group">
+ <label>Site Name</label>
+    <input #_sname="ngModel" required [class.is-invalid]="_sname.invalid && _sname.touched" type="text" class="form-control" [(ngModel)]="sname">
+  </div>
+
+
+ <div class="form-group">
+ <label>Area</label>
+    <input #_area="ngModel" required [class.is-invalid]="_area.invalid && _area.touched" type="text" class="form-control" [(ngModel)]="area">
+  </div>
+
+
+
+
+ <div class="form-group">
+ <label>Work Type</label>
+    <input #_wtype="ngModel" required [class.is-invalid]="_wtype.invalid && _wtype.touched" type="text" class="form-control" [(ngModel)]="wtype">
+  </div>
+
+
+ <div class="form-group">
+ <label>Work Name</label>
+    <input #_wname="ngModel" required [class.is-invalid]="_wname.invalid && _wname.touched" type="text" class="form-control" [(ngModel)]="wname">
+  </div>
+
+
+ <div class="form-group">
+ <label>Agency</label>
+    <input #_agency="ngModel" required [class.is-invalid]="_agency.invalid && _agency.touched" type="text" class="form-control" [(ngModel)]="agency">
+  </div>
+
+
+
+
+  <div class="form-group">
+ <label>Start Date</label> 
+   <div class="input-group">
+ <input #_sdate="ngModel" required [class.is-invalid]="_sdate.invalid && _sdate.touched" placeholder="yyyy-mm-dd"
+           name="b"  [(ngModel)]="sdate" ngbDatepicker #b="ngbDatepicker" [minDate]="{year: 2020, month: 1, day: 1}"
+                [maxDate]="{year: 2020, month: 12, day: 31}">
+
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="b.toggle()" type="button"></button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<div class="form-group"> 
+<label>End Date</label> 
+<div class="input-group">
+<input #_edate="ngModel" required [class.is-invalid]="_edate.invalid && _edate.touched" placeholder="yyyy-mm-dd"
+ name="c"  [(ngModel)]="edate" ngbDatepicker #c="ngbDatepicker" [minDate]="{year: 2020, month: 1, day: 1}"
+[maxDate]="{year: 2020, month: 12, day: 31}">
+<div class="input-group-append">
+<button class="btn btn-outline-secondary calendar" (click)="c.toggle()" type="button"></button>
+</div> 
+</div> 
+</div> 
+
+
+
+
+
+<div class="form-group">                                                                                                                                                                               
+<label>Masons</label>                                                                                                                                                                      
+<input #_masons="ngModel" required [class.is-invalid]="_masons.invalid && _masons.touched" type="text" class="form-control" [(ngModel)]="masons">                                                
+</div>
+
+
+<div class="form-group">                                                                                                                                                                                           
+<label>Labour</label>                                                                                                                                                                                              
+<input #_labour="ngModel" required [class.is-invalid]="_labour.invalid && _labour.touched" type="text" class="form-control" [(ngModel)]="labour">                                     
+</div> 
+
+
+
+
+
+
+
+ <div class="form-group">
+    <label>Status</label>
+    <select #_status="ngModel" required [class.is-invalid]="_status.invalid && _status.touched" type="text" class="form-control" [(ngModel)]="status" class="form-control form-row col-5" id="exampleFormControlSelect1">
+
+    <option>Yet To Start</option>
+<option>Under Progress</option>
+<option>Completed</option>
+   </select>
+  </div>
+ 
+
+ 
+
+
+  <button type="submit" [disabled]=" _jdate.errors ||  _sname.errors || _area.errors || _wtype.errors || _wname.errors || _agency.errors ||  _sdate.errors || _edate.errors ||  _masons.errors || _labour.errors || _status.errors" class="btn btn-primary" (click)="addTask()">Add</button>
+</div>                                                                                                                
+<router-outlet></router-outlet>

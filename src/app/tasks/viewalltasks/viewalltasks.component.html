@@ -23,6 +23,29 @@
 </tr>
   </thead>
   <tbody>
+
+
+<tr *ngFor="let b of tasks; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+
+      {{ b.jdate}}
+    </td>
+    <td>{{ b.sname | titlecase}}</td>
+    <td>{{ b.area | titlecase}}</td>
+     <td>{{ b.wtype | titlecase}}</td>
+<td>{{ b.wname | titlecase}}</td>
+<td>{{ b.agency | titlecase }}</td>
+<td>{{ b.sdate }}</td>
+<td>{{ b.edate }}</td>
+<td>{{ b.masons }}</td>
+<td>{{ b.labour }}</td>
+<td>{{ b.status }}</td>
+                                                                                                                                                                                                           
+  </tr>
+
+
+
   </tbody>
 </table>
 
