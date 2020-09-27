@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "easysoftwares-a9b56": {
+      "hosting": {
+        "easysoftwares": [
+          "easysoftwares-a9b56"
+        ]
+      }
+    }
+  }
+}
