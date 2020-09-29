@@ -10,6 +10,7 @@ import { TasksService } from './../../services/tasks.service';
 export class UpdatestatusComponent implements OnInit {
 id:string;
 task:any;
+
   constructor(private router: ActivatedRoute, private as: TasksService) { }
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ this.as.getTask(docid).subscribe(data => {
 updateStatus()
 {
 let record = { };
-record['Status']=this.task.status;
+record['Status']=this.task.Status;
 this.as.updateTask(record, this.id);
 }
 
