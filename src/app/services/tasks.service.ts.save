@@ -46,38 +46,22 @@ return d + ' ' + this.monthNames[t.getMonth()] + ', ' + y;
 
 
 
-
-
-
 addSiteName(site)
 {
 
-this.fireservices.collection('Sites', ref => ref.where('site', '==', site )).snapshotChanges().subscribe(res => {
-    if (res.length > 0)
-    {
-   
-    }
-    else
-    {
-    let record = {};
-    record['site'] = site;
-     return this.fireservices.collection('Sites').add(record);
-    }
-});
+this.doc = this.fireservices.collection('Sites', ref => ref.where('Site Name', '==', site )).snapshotChanges(); 
 
-
-
+if(this.doc.exists)
+{
 
 }
 
-
-
-
-getSitesByName(name)
+else
 {
-name = name.toLowerCase();
-return this.fireservices.collection('Sites', ref => ref.orderBy('site').startAt(name).endAt(name + '\uf8ff').limit(5)).valueChanges();
-
+let record = {};
+record['Site Name'] = site;
+return this.fireservices.collection('Sites').add(record); 
+}
 
 }
 

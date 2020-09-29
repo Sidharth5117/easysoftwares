@@ -27,7 +27,7 @@
 
  <div class="form-group">
  <label>Site Name</label>
-    <input #_sname="ngModel" required [class.is-invalid]="_sname.invalid && _sname.touched" type="text" class="form-control" [(ngModel)]="sname">
+    <input #_sname="ngModel" required [class.is-invalid]="_sname.invalid && _sname.touched" type="text" class="form-control" [(ngModel)]="sname" [ngbTypeahead]="search" [resultFormatter]="resultFormatBandListValue" [inputFormatter]="inputFormatBandListValue">
   </div>
 
 

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from './../../services/tasks.service';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+
+import {Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap, catchError} from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-newtask',
   templateUrl: './newtask.component.html',
@@ -8,10 +13,12 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 })
 export class NewtaskComponent implements OnInit {
 
+
+
 jdate: NgbDateStruct;
 sdate: NgbDateStruct;
 edate: NgbDateStruct;
-sname: string;
+sname: any;
 area: string;
 wtype: string;
 wname: string;
@@ -19,11 +26,45 @@ agency: string;
 masons: string;
 labour: string;
 status: string;
-
+sites: any;
   constructor(private as: TasksService) { }
 
   ngOnInit(): void {
+
+
   }
+
+
+
+
+
+
+
+
+
+
+search = (text$: Observable<string>) => {
+      return text$.pipe(      
+          debounceTime(200), 
+          distinctUntilChanged(),
+          // switchMap allows returning an observable rather than maps array
+          switchMap( (searchText) =>  this.as.getSitesByName(searchText) )           
+      );                 
+    }
+
+
+resultFormatBandListValue(value: any) {            
+  return value.site;
+}
+
+
+inputFormatBandListValue(value: any)   {
+  if(value.site)
+    return value.site
+  return value;
+}
+
+
 
 
 
@@ -42,7 +83,7 @@ record['End Date Month']=this.edate.month;
 record['End Date Year']=this.edate.year; 
 record['End Date Day']=this.edate.day; 
 
-record['Site Name']=this.sname;
+record['Site Name']=this.sname.toLowerCase();
 record['Area']=this.area;
 record['Work Type']=this.wtype;
 record['Work Name']=this.wname;
@@ -54,6 +95,19 @@ record['Status']=this.status;
 
 this.as.addTask(record);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
