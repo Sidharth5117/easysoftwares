@@ -19,11 +19,45 @@ doc:any;
 addTask(Record)
 {
 alert("Task Added Successfully");
-this.router.navigate(['viewtasks']);
+this.router.navigate(['viewalltasks']);
+
 this.addSiteName(Record['Site Name']);
+
 return this.fireservices.collection('Tasks').add(Record);
 
 }
+
+
+
+deleteTask(docid)
+{
+if(window.confirm('Are sure you want to delete this task ?')){
+alert("Task Deleted Successfully");
+this.router.navigate(['viewalltasks']);
+return this.fireservices.doc('Tasks/' + docid).delete();
+}
+}
+
+
+getTask(docid)
+{
+
+ return this.fireservices.doc('Tasks/'+docid).valueChanges();
+
+}
+
+
+
+updateTask(Record, docid)
+{
+if(window.confirm('Are sure you want to update ?')){
+alert("Task Updated Successfully");
+this.router.navigate(['viewalltasks']);
+return this.fireservices.doc('Tasks/' + docid).update(Record);
+}
+}
+
+
 
 
 getAllTasks()
@@ -80,6 +114,10 @@ return this.fireservices.collection('Sites', ref => ref.orderBy('site').startAt(
 
 
 }
+
+
+
+
 
 
 

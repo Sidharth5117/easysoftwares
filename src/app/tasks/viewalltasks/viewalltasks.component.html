@@ -20,6 +20,7 @@
  <th scope="col">Masons</th>
  <th scope="col">Labour</th>
  <th scope="col">Status</th>
+ <th scope="col">Actions</th>
 </tr>
   </thead>
   <tbody>
@@ -41,6 +42,7 @@
 <td>{{ b.masons }}</td>
 <td>{{ b.labour }}</td>
 <td>{{ b.status }}</td>
+<td><span (click)="onSelect(b)" class="badge badge-success">Update Status</span>&nbsp;<span (click)="onDelete(b)" class="badge badge-danger">Delete</span></td>
                                                                                                                                                                                                            
   </tr>
 

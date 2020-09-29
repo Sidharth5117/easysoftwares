@@ -27,17 +27,13 @@ masons: string;
 labour: string;
 status: string;
 sites: any;
+name:string;
   constructor(private as: TasksService) { }
 
   ngOnInit(): void {
 
 
   }
-
-
-
-
-
 
 
 
@@ -54,7 +50,7 @@ search = (text$: Observable<string>) => {
 
 
 resultFormatBandListValue(value: any) {            
-  return value.site;
+return value.site;
 }
 
 
@@ -83,7 +79,10 @@ record['End Date Month']=this.edate.month;
 record['End Date Year']=this.edate.year; 
 record['End Date Day']=this.edate.day; 
 
-record['Site Name']=this.sname.toLowerCase();
+if(this.sname.site)
+ record['Site Name']=this.sname.site;
+else
+ record['Site Name']=this.sname.toLowerCase();
 record['Area']=this.area;
 record['Work Type']=this.wtype;
 record['Work Name']=this.wname;

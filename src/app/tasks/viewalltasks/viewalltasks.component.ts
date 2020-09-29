@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from './../../services/tasks.service';
+import { Router } from  "@angular/router";
+
 @Component({
   selector: 'app-viewalltasks',
   templateUrl: './viewalltasks.component.html',
@@ -9,7 +11,7 @@ export class ViewalltasksComponent implements OnInit {
 
 
 tasks: any;
-  constructor(private as: TasksService) { }
+  constructor(private as: TasksService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -41,5 +43,28 @@ edate: this.as.formatDate(e.payload.doc.data()['End Date Day'],e.payload.doc.dat
 
 
   }
+
+
+
+
+
+
+onSelect(task)
+{
+this.router.navigate(['/updatestatus',task.id]);
+}
+
+
+onDelete(task)                                                                                                                                                                                                 {
+this.as.deleteTask(task.id);
+}  
+
+
+
+
+
+
+
+
 
 }

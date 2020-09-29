@@ -6,6 +6,8 @@ import { ProfileComponent} from './user/profile/profile.component';
 import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
 import { NewtaskComponent } from './tasks/newtask/newtask.component';
 import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.component';
+import { UpdatestatusComponent } from './tasks/updatestatus/updatestatus.component';
+
 
 const routes: Routes = [
 {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -15,7 +17,7 @@ const routes: Routes = [
 {path : 'viewtasks', component: ViewtasksComponent},
 {path : 'newtask', component: NewtaskComponent},
 {path : 'viewalltasks', component: ViewalltasksComponent},
-
+{path : 'updatestatus/:id', component: UpdatestatusComponent},
 ];
 
 @NgModule({

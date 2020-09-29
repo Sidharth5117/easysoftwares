@@ -22,7 +22,7 @@ this.as.getUserState().subscribe( user => {
 this.user=user;
 if(this.user)
 {
-this.router.navigate(['viewtasks']);
+this.router.navigate(['viewalltasks']);
 }
 else
 {

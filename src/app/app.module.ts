@@ -19,6 +19,7 @@ import { NewtaskComponent } from './tasks/newtask/newtask.component';
 import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
 import { OptionsComponent } from './shared/options/options.component';
 import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.component';
+import { UpdatestatusComponent } from './tasks/updatestatus/updatestatus.component';
 
 
 
@@ -32,7 +33,8 @@ import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.compone
     NewtaskComponent,
     ViewtasksComponent,
     OptionsComponent,
-    ViewalltasksComponent
+    ViewalltasksComponent,
+    UpdatestatusComponent
   ],
   imports: [
     BrowserModule,

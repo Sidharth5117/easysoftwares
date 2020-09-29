@@ -1,0 +1,24 @@
+<br>
+<div class="container">
+
+
+<br>
+<h1>Update Status</h1>
+
+
+<div class="form-group">
+    <label>Status</label>
+    <select #_status="ngModel" required [class.is-invalid]="_status.invalid && _status.touched" type="text" class="form-control" [(ngModel)]="task.Status" class="form-control form-row col-5" id="exampleFormControlSelect1">
+
+    <option>Yet To Start</option>
+    <option>Under Progress</option>
+    <option>Completed</option>
+   </select>
+  </div>
+
+
+
+
+<button type="submit" [disabled]="_status.errors" class="btn btn-primary" (click)="updateStatus()">Update</button>
+</div>                                                                                                               
+<router-outlet></router-outlet>
