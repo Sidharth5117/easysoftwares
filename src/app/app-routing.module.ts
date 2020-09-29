@@ -7,6 +7,7 @@ import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
 import { NewtaskComponent } from './tasks/newtask/newtask.component';
 import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.component';
 import { UpdatestatusComponent } from './tasks/updatestatus/updatestatus.component';
+import { ViewbystatusComponent } from './tasks/viewbystatus/viewbystatus.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
 {path : 'viewtasks', component: ViewtasksComponent},
 {path : 'newtask', component: NewtaskComponent},
 {path : 'viewalltasks', component: ViewalltasksComponent},
+{path : 'viewbystatus', component: ViewbystatusComponent},
+
 {path : 'updatestatus/:id', component: UpdatestatusComponent},
 ];
 

@@ -1,0 +1,74 @@
+<br><br>
+<div class="container">
+<h2>Filter Tasks by Status</h2>
+<options></options>
+
+<br>
+<br>
+
+
+
+<div class="form-group">
+      <select #_status="ngModel" (click)="getTasks()" required [class.is-invalid]="_status.invalid && _status.touched" type="text" [(ngModel)]="status" class="form-control form-row col-5" id="exampleFormControlSelect1">
+
+<option>Yet To Start</option>
+<option>Under Progress</option>
+<option>Completed</option>
+   </select>
+  </div>
+</div>
+
+
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Sr No</th>
+    <th scope="col">Job Creation Date</th>
+    <th scope="col">Site Name</th>
+    <th scope="col">Area</th>
+    <th scope="col">Work Type</th>
+    <th scope="col">Work Name</th>
+ <th scope="col">Agency</th>
+ <th scope="col">Start Date</th>
+ <th scope="col">End Date</th>
+ <th scope="col">Masons</th>
+ <th scope="col">Labour</th>
+ <th scope="col">Status</th>
+ <th scope="col">Actions</th>
+</tr>
+  </thead>
+  <tbody>
+
+
+<tr *ngFor="let b of tasks; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+
+      {{ b.jdate}}
+    </td>
+    <td>{{ b.sname | titlecase}}</td>
+    <td>{{ b.area | titlecase}}</td>
+     <td>{{ b.wtype | titlecase}}</td>
+<td>{{ b.wname | titlecase}}</td>
+<td>{{ b.agency | titlecase }}</td>
+<td>{{ b.sdate }}</td>
+<td>{{ b.edate }}</td>
+<td>{{ b.masons }}</td>
+<td>{{ b.labour }}</td>
+<td>{{ b.status }}</td>
+<td><span (click)="onSelect(b)" class="badge badge-success">Update Status</span>&nbsp;<span (click)="onDelete(b)" class="badge badge-danger">Delete</span></td>
+                                                                                                                                                                                                           
+  </tr>
+
+
+
+  </tbody>
+</table>
+
+
+
+
+
+<router-outlet></router-outlet>

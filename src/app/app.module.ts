@@ -20,6 +20,7 @@ import { ViewtasksComponent } from './tasks/viewtasks/viewtasks.component';
 import { OptionsComponent } from './shared/options/options.component';
 import { ViewalltasksComponent } from './tasks/viewalltasks/viewalltasks.component';
 import { UpdatestatusComponent } from './tasks/updatestatus/updatestatus.component';
+import { ViewbystatusComponent } from './tasks/viewbystatus/viewbystatus.component';
 
 
 
@@ -34,7 +35,8 @@ import { UpdatestatusComponent } from './tasks/updatestatus/updatestatus.compone
     ViewtasksComponent,
     OptionsComponent,
     ViewalltasksComponent,
-    UpdatestatusComponent
+    UpdatestatusComponent,
+    ViewbystatusComponent
   ],
   imports: [
     BrowserModule,

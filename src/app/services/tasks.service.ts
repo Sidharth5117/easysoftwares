@@ -48,6 +48,14 @@ getTask(docid)
 
 
 
+getTasksByStatus(status)
+{
+return this.fireservices.collection('Tasks', ref => ref.where('Status', '==', status)).snapshotChanges();
+}
+
+
+
+
 updateTask(Record, docid)
 {
 if(window.confirm('Are sure you want to update ?')){
